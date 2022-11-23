@@ -16,6 +16,11 @@
     }
 
 
+/* setting the body - text defaults */
+
+ul {
+  list-style-type: none;
+}
 
 
  /* container - grid */ 
@@ -91,7 +96,7 @@
 .resume {  display: grid;
   grid-template-columns: 100%;
   grid-auto-columns: 1fr;
-  grid-auto-rows: 0.5fr;
+  grid-auto-rows: auto;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -204,7 +209,7 @@
     grid-template-rows: auto;
     gap: 0px 0px;
     margin: 0px 20px 0px 0px;
-    padding: 50px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
     width: 100%;
   
     
@@ -223,8 +228,9 @@
     width: 100%;
     justify-self: none;
     grid-area: resume;
-    margin: 0px 0px 0px 20px;
-    padding: 50px;
+    margin: 0px 0px 0px 30px;
+    padding: 20px 50px 50px 50px;
+    height: 100%;
   }
   
  
@@ -255,20 +261,83 @@
 
 } 
 
+/*resume styles */
 
-
-/* setting the body - text defaults */
-
-ul {
-  list-style-type: none;
-}
-
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+.resume hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
+  border-style: lightgrey;
+  width: 100px;
+}
+
+
+
+/* skills section styles*/
+
+.accordion .ctn {
+  position: relative;
+  margin: 10px 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer */
+
+.accordion .label {
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+/* Positions the plus sign 5px from the right. Centers it using the transform property. */
+
+.accordion .label::before {
+  content: '+';
+  color: lightgray;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 20px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+
+.accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  opacity: 70%;
+  font-size: 13px;
+  text-align: justify;
+  overflow: hidden;
+  transition: 0.5s;
+  list-style-type: circle !important;
+}
+
+.accordion .content span {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+/* Adds a horizontal line between the contents */
+
+.accordion hr {
+  width: 100;
+  margin-left: 0;
+  
+}
+
+/* Unhides the content part when active. Sets the height */
+
+.accordion .ctn.active .content {
+  height: 230px;
+}
+
+/* Changes from plus sign to negative sign once active */
+
+.accordion .ctn.active .label::before {
+  content: '-';
+  font-size: 30px;
 }
