@@ -35,6 +35,17 @@ a:active {
   text-decoration: none; 
 }
 
+/* win8 colors */
+
+.w3-win8-teal {
+  color:#fff!important;background-color:#00aba9!important
+}
+.w3-text-win8-teal,.w3-hover-text-win8-teal:hover
+{
+  color:#00aba9!important
+}
+
+
  /* container - grid */ 
  
  .container  { display: grid;
