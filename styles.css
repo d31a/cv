@@ -312,7 +312,6 @@ ul {
   text-align: justify;
   overflow: hidden;
   transition: 0.5s;
-  list-style-type: circle !important;
 }
 
 .accordion .content span {
